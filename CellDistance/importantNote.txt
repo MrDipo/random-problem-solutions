@@ -1,0 +1,2 @@
+Apparently, whoever gave this problem mentioned that IF|ELSE statements, or any selection structure for that matter are not allowed.
+Nawa sha.

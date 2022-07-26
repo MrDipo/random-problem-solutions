@@ -2,12 +2,12 @@ import random
 
 # generate random 4 digit number
 def fourNumGen():
-    return tuple(str(random.randint(1000, 9999))) # this method excludes numbers starting with a 0. I can live with that
+    return str(random.randint(1000, 9999)) # this method excludes numbers starting with a 0. I can live with that
 
 
 def compare(guess, answer):
-    if ''.join(guess) == '0000':
-        return f"The correct answer is {''.join(answer)}"
+    if guess == '0000':
+        return f"The correct answer is {answer}"
 
     no_of_guesses = 1
     while True:
@@ -23,8 +23,8 @@ def compare(guess, answer):
         print(f"{cows} cows, {bulls} bulls")
         
         if cows == 4: 
-            return f"Congratulations, {''.join(answer)} is correct!\nYou used {no_of_guesses} guesses"
-        guess = tuple(input())
+            return f"Congratulations, {answer} is correct!\nYou took {no_of_guesses} guesses"
+        guess = input()
         no_of_guesses += 1
 
 
@@ -32,7 +32,7 @@ def main():
     # set up variables
     real_num = fourNumGen()
     print("Welcome to the Cows & Bulls game! Enter a number:\n(To give up, enter 0000)")
-    user_guess = tuple(input())
+    user_guess = input()
 
     # start comparison
     print(compare(user_guess, real_num))

@@ -8,9 +8,9 @@ class DecodeNewsPage:
         r_html = r.text
 
         soup = BeautifulSoup(r_html, features="html.parser")
-        titles = soup.find_all('h3')
-        for title in titles:
-            print(title.text)
+        headings = soup.find_all('h3')
+        for heading in headings:
+            print(heading.name + ' ' + heading.text.strip())
 
 
 url = 'https://www.nytimes.com/'
